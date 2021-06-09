@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nathan Ogden</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="static/img/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="static/img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="static/img/favicon-16x16.png">
+        <link rel="manifest" href="static/img/site.webmanifest">
+        <link rel="mask-icon" href="static/img/safari-pinned-tab.svg" color="#000000">
+        <meta name="msapplication-TileColor" content="#00aba9">
+        <meta name="theme-color" content="#ffffff">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700i&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" type="text/css" href="static/css/site.css" />
+    </head>
+    <body>
+        <div id="container">
+            <div id="head">
+                <img src="static/img/logo.png" alt="Nathan Ogden - Developer" title="Nathan Ogden - Developer" />
+                <div id="contact">
+                    <div class="value">
+                        <strong>Email:</strong>
+                        <a href="mailto:{{ .Info.Email }}">{{ .Info.Email }}</a>
+                    </div>
+                </div>
+            </div>
+            <div id="intro">
+                <h2>About</h2>
+                <p>
+                    {{ (Markdown .Info.About) }}
+                </p>
+            </div>
+            <div id="portfolio">
+                {{ range $cat := .Categories }}
+                    <div class="category category-{{ $cat.Key }}">
+                        <h2>{{ $cat.Name }}</h2>
+                        <p>{{ (Markdown $cat.Desc) }}</p>
+                        <div class="items">
+                            {{ range $proj := $.Projects }}
+                                {{ if eq $proj.Category $cat.Key }}
+                                    <div class="item">
+                                        <h3>{{ $proj.Name }}</h3>
+                                        <div class="images">
+                                            {{ if $proj.Images }}
+                                            {{ range $img := $proj.Images }}
+                                                <a data-fslightbox="{{ $proj.Name }}" href="static/img/screenshots/{{ $img }}">
+                                                    <img src="static/img/screenshots/{{ $img }}" />
+                                                </a>
+                                            {{ end }}
+                                            {{ else }}
+                                                <img src="/static/img/no_image.png" alt="No Image" />
+                                            {{ end }}
+                                        </div>
+                                        <div class="tags value">
+                                            <strong>Built With:</strong>
+                                            {{ range $lang := $proj.BuiltWith }}
+                                                <img src="static/img/langs/{{ $lang }}.png" alt="{{ $lang }}" title="{{ $lang }}" />
+                                            {{ end }}
+                                        </div>
+                                        {{ if $proj.Address }}
+                                            <div class="url value">
+                                                <strong>Site:</strong>
+                                                <a href="https://{{ $proj.Address }}">{{ $proj.Address }}</a>
+                                            </div>
+                                        {{ end }}
+                                        {{ if $proj.Source }}
+                                        <div class="git value">
+                                            <strong>Source:</strong>
+                                            <a href="https://{{ $proj.Source }}">{{ $proj.Source }}</a>
+                                        </div>
+                                        {{ end }}
+                                        {{ if $proj.Desc }}                                        
+                                            <div class="desc"><p>{{ (Markdown $proj.Desc) }}</p></div>
+                                        {{ end }}
+
+                                    </div>
+                                {{ end }}
+                            {{ end }}
+                        </div>
+                    </div>
+                {{ end }}
+            </div>
+            <div id="footer">
+                Copyright &copy; {{ .CopyrightYear }} Nathan Ogden
+            </div>
+        </div>
+        <script type="text/javascript" src="static/js/fslightbox.js"></script>
+    </body>
+</html>

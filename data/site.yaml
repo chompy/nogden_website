@@ -1,0 +1,188 @@
+info:
+    email: "nathan@ogden.tech"
+    about: |
+        I have been professional developer since 2007 and have worked on a variety of projects. My
+        passion for programming comes from a desire to make video games, something I often do in my
+        free time. I'm always looking for new and interesting problems to solve through code!
+
+categories:
+    -
+        key: client
+        name: "Client Websites"
+        desc: |
+            Sites built for clients that I was directly involved with.
+    
+    -
+        key: app
+        name: "Applications & Tools"
+        desc: |
+            Applications and tools created by me, both as internal company projects and personal side projects.
+
+    -
+        key: game
+        name: "Games"
+        desc: |
+            Game projects that I have worked on. 
+
+projects:
+    -
+        name: "OncoLife Survivorship Care Plan"
+        category: client
+        built_with:
+            - php
+            - symfony
+            - javascript
+        images:
+            - "oncolife1.jpg"
+        address: "oncolife.oncolink.org"
+        desc: |
+            Web application that helps cancer patients determine their best treatment options.
+        
+    -
+        name: "Modern Language Association"
+        category: client
+        built_with:
+            - php
+            - symfony
+        images:
+            - "mla1.jpg"
+        address: "www.mla.org"
+        desc: |
+            Website for the Modern Language Association featuring a sophisicated custom member sign up form and bookstore
+
+    -
+        name: "Tallahassee Film Society Website"
+        category: client
+        built_with:
+            - python
+            - django
+        images:
+            - "tfs1.jpg"
+        address: "www.tallahasseefilms.com"
+        desc: |
+            Website for the Tallahassee Film Society featuring a simple backend that allows the posting of showings and Shopify intergration.
+        
+    -
+        name: "FFLiveParse"
+        category: app
+        built_with:
+            - golang
+            - javascript
+            - csharp
+        images:
+            - "ffliveparse1.png"
+            - "ffliveparse2.png"
+        address: "www.ffliveparse.com"
+        source: "github.com/chompy/ffliveparse_server"
+        desc: |
+            Web application for viewing game play statistics for the popular online video game, 
+            [Final Fantasy XIV](https://www.finalfantasyxiv.com/). It extends another popular
+            tool with a C# extension which pushes data to a Golang server which uses websockets
+            to push data to Javascript in browser.
+
+    -
+        name: "Platform CC"
+        category: app
+        built_with:
+            - golang
+        images:
+            - "pcc1.png"
+        address: "platform.cc"
+        source: "gitlab.com/contextualcode/platform_cc"
+        desc: |
+            Application writen in Go for provisioning apps with Docker based on [Platform.sh's](https://platform.sh/) .platform.app.yaml file.
+            Recently there has been a colaboration effort with Platform.sh to extend and improve Platform CC.
+
+    -
+        name: "CProxy & CProxy-Cache"
+        category: app
+        built_with:
+            - golang
+        images:
+            - "cproxy1.png"
+        source: "github.com/chompy/cproxy-cache"
+        desc: |
+            HTTP/FastCGI proxy with a cache extension written in Go. The cache is meant
+            as a very simple and lightweight substitute to Varnish and supports edge side includes (ESI).
+
+    -
+        name: "Arduino Family Calendar"
+        category: app
+        built_with:
+            - cpp
+        source: "github.com/chompy/arduino_family_calendar"
+        desc: |
+            A family calendar Arduino project. Displays upcoming events in the family and pictures
+            from a micro SD card. Used Arduino + TTF shield + 3D printed case and gave to family as gifts.
+
+    -
+        name: "Libchomp"
+        category: app
+        built_with:
+            - cpp
+        source: "github.com/chompy/libchomp"
+        desc: |
+            A C++ library and toolkit for 2D game development created mostly as a learning exercise. 
+
+    -
+        name: "Bump N Brawl"
+        category: game
+        built_with:
+            - python
+        images:
+            - "bnb1.jpg"
+            - "bnb2.jpg"
+            - "bnb3.jpg"
+            - "bnb4.jpg"
+        source: "github.com/chompy/bumpnbrawl"
+        desc: |
+            A simple top down fighting game with fun and colorful characters. 
+            Built with [Panda 3D](https://www.panda3d.org/), a free and open source game engine.
+
+    -
+        name: "Run Chomp"
+        category: game
+        built_with:
+            - javascript
+            - cpp
+        images:
+            - "rc1.png"
+            - "rc2.jpg"
+        address: "run.chompy.me.s3.amazonaws.com/index.html"
+        desc: |
+            A simple endless runner where you avoid obstacles and collect coins. A simple
+            game that is easy to code that I often rewrite to test new langauges and
+            engines. Screenshot 1 shows a C++ version written for an [Arduino](https://www.arduino.cc/) 
+            while screenshot 2 shows a Javascript/HTML5 version.
+
+    -
+        name: "Dream Sphere"
+        category: game
+        built_with:
+            - python
+        images:
+            - "ds1.jpg"
+            - "ds2.jpg"
+        desc: |
+            A 2.5D dungeon crawler that was to feature a custom character creator, online
+            multiplayer, and lots of equipable items. While this project was never completed 
+            it's a interesting look in to my early years as a developer and game 
+            esigner. This was also built with [Panda 3D](https://www.panda3d.org/).        
+
+    -
+        name: "Chompy's Dungeon [Working Title]"
+        category: game
+        built_with:
+            - python
+            - golang
+            - cpp
+        images:
+            - "cd1.png"
+            - "cd2.png"
+            - "cd3.png"
+        desc: |
+            Over the years I've tried many times to create a cooperative side scroller
+            dungeon crawler game. While I've never quite seen it through to completion
+            every attempt is always a very interesting and fun exercise. Over the years
+            I've rebuilt the same prototype probably at least half a dozen times in a
+            variety of languages and game engines, including engines I built myself.
