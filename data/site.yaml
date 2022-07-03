@@ -1,9 +1,9 @@
 info:
     email: "nathan@ogden.tech"
     about: |
-        I have been professional developer since 2007 and have worked on a variety of projects. My
-        passion for programming comes from a desire to make video games, something I often do in my
-        free time. I'm always looking for new and interesting problems to solve through code!
+        I have been professional developer since 2007 and have worked on a variety of projects. I have a passion for
+        writing code as cleanly and efficiently as possible and I'm always looking for new and interesting
+        problems to solve through code!
 
 categories:
     -
@@ -37,7 +37,21 @@ projects:
         address: "oncolife.oncolink.org"
         desc: |
             Web application that helps cancer patients determine their best treatment options.
-        
+
+    -
+        name: "Florida Courts - Virtual Courts"
+        category: client
+        built_with:
+            - php
+            - symfony
+            - javascript
+            - react
+        images:
+            - "vc1.jpg"
+        address: "vc.flcourts.org"
+        desc: |
+            Web application that provides a series of Family Court training programs.
+
     -
         name: "Modern Language Association"
         category: client
@@ -70,8 +84,8 @@ projects:
             - javascript
             - csharp
         images:
-            - "ffliveparse1.png"
             - "ffliveparse2.png"
+            - "ffliveparse1.png"
         address: "www.ffliveparse.com"
         source: "github.com/chompy/ffliveparse_server"
         desc: |
@@ -91,7 +105,6 @@ projects:
         source: "gitlab.com/contextualcode/platform_cc"
         desc: |
             Application writen in Go for provisioning apps with Docker based on [Platform.sh's](https://platform.sh/) .platform.app.yaml file.
-            Recently there has been a colaboration effort with Platform.sh to extend and improve Platform CC.
 
     -
         name: "CProxy & CProxy-Cache"
@@ -110,10 +123,12 @@ projects:
         category: app
         built_with:
             - cpp
+        images:
+            - "fc1.jpg"
         source: "github.com/chompy/arduino_family_calendar"
         desc: |
-            A family calendar Arduino project. Displays upcoming events in the family and pictures
-            from a micro SD card. Used Arduino + TTF shield + 3D printed case and gave to family as gifts.
+            A family calendar Arduino project. It displayed upcoming family events and photos
+            from a micro SD card. It used an Arduino, a TTF shield, and a 3D printed case. They were given away as gifts.
 
     -
         name: "Libchomp"
@@ -148,12 +163,12 @@ projects:
         images:
             - "rc1.png"
             - "rc2.jpg"
-        address: "run.chompy.me.s3.amazonaws.com/index.html"
+        address: "s3.amazonaws.com/run.chompy.me/index.html"
         desc: |
             A simple endless runner where you avoid obstacles and collect coins. A simple
             game that is easy to code that I often rewrite to test new langauges and
-            engines. Screenshot 1 shows a C++ version written for an [Arduino](https://www.arduino.cc/) 
-            while screenshot 2 shows a Javascript/HTML5 version.
+            engines. Screenshot 1 (above) shows a C++ version written for an [Arduino](https://www.arduino.cc/) 
+            while [screenshot 2](i/s/rc2.jpg) shows a Javascript/HTML5 version.
 
     -
         name: "Dream Sphere"

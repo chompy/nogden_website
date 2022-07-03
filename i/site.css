@@ -57,7 +57,7 @@ h2 {
 }
 
 #head img {
-    max-width: 100%;
+    max-width: 450px;
 }
 
 #head #contact {
@@ -158,5 +158,8 @@ h2 {
     #portfolio .item {
         max-width: 100%;
         margin-right: 0;
+    }
+    #head img {
+        max-width: 100%;
     }
 }
