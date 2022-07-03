@@ -7,10 +7,10 @@
     a, a:hover, a:visited { color: #0c0b36; }
     #b { padding: 30px 30px 0; max-width: 1920px; margin: auto; }
     #h { height: 170px; }
-    #c { float: right; margin: 50px 15px 0 0; position: relative; z-index: 2; text-align: right; }
+    #c { margin: 50px 15px 0 0; z-index: 2; text-align: right; position: absolute; right: 20px; top: -10px; }
     #c b { margin: 0 8px 0 0; }
     #c img { margin: 10px 0 0 0; background: #000; border-radius: 32px; padding: 5px; max-width: 32px; }
-    #l { font-family: 'Courier New', Courier, monospace; rotate: -3deg; font-size: 4em; margin-top: -20px; letter-spacing: -3px; }
+    #l { font-family: 'Courier New', Courier, monospace; transform: rotate(-3deg); white-space: nowrap; font-size: 4em; margin-top: -20px; letter-spacing: -3px; }
     #l f { letter-spacing: -10px; }
     #l i { color: #0c0b36; font-size: .6em; display: block; margin-top: -17px; letter-spacing: -3px; }
     h2 { color: #fff; font-size: 32px; font-style: italic; background: #000; box-shadow: -31px 0px 0px #000, 31px 0px 0px #000; margin: 0; letter-spacing: -1px; line-height: 27px; }
@@ -22,15 +22,21 @@
     .p b { display: inline-block; width: 90px; }
     .p .lang img { max-height: 32px; vertical-align: -8px; }
     footer { background: #000; color: #fff; text-align: center; padding: 10px; box-shadow: -31px 0px 0px #000, 31px 0px 0px #000; margin-top: 5px; }
+    @media (max-width: 720px) {
+        #h { height: auto; }
+        #l { text-align: center; }
+        #c { position: static; text-align: center; margin: 25px 0 20px 0; }
+        .p { width: 100%; margin-right: 0; }
+    }
 </style>
 <div id=b>
     <div id=h>
+        <div id=l><b>N<f>at</f>han Ogden</b><i>software engineer</i></div>
         <div id=c>
             <b>Email:</b><a href="mailto:{{ .Info.Email }}">{{ .Info.Email }}</a><br>
             <a href="//github.com/chompy"><img src="i/github.png" alt="Github" /></a>
             <a href="//www.linkedin.com/in/nathan-ogden-75a2465b/"><img src="i/linkedin.png" alt="LinkedIn" /></a>
         </div>
-        <div id=l><b>N<f>at</f>han Ogden</b><i>software engineer</i></div>
     </div>
     <h2>About</h2><p>{{ (Markdown .Info.About) }}</p>
     {{ range $cat := .Categories }}
