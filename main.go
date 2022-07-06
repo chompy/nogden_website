@@ -26,7 +26,7 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
-const imgThumbWidth = 615
+const imgThumbWidth = 420
 const imgJpgQuality = 50
 
 type Site struct {
