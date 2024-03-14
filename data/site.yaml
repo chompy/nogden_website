@@ -1,8 +1,9 @@
 info:
     email: "nathan@ogden.tech"
     about: |
-        I have been professional developer since 2007 and have worked on a variety of projects. I have a passion for
-        writing code as cleanly and efficiently as possible and I'm always looking for new and interesting
+        I'm a veteran software engineer with over a decade of experience, skilled
+        in PHP, Golang, and Python. I have a passion for writing code as cleanly
+        and efficiently as possible and I'm always looking for new and interesting
         problems to solve through code!
 
 categories:
@@ -37,6 +38,7 @@ projects:
         address: "oncolife.oncolink.org"
         desc: |
             Web application that helps cancer patients determine their best treatment options.
+            I worked with another developer on this to build a questionaire powered by a complex logic engine.
 
     -
         name: "Florida Courts - Virtual Courts"
@@ -50,7 +52,10 @@ projects:
             - "vc1.jpg"
         address: "vc.flcourts.org"
         desc: |
-            Web application that provides a series of Family Court training programs.
+            Web application that provides a series of Family Court training programs. Working 
+            with other team members at Contextual Code I implemented the core logic that powered 
+            the various courses. It was built using a system inspired by the logic engine that powers
+            the OncoLife Survivorship Care Plan.
 
     -
         name: "Modern Language Association"
@@ -62,7 +67,9 @@ projects:
             - "mla1.jpg"
         address: "www.mla.org"
         desc: |
-            Website for the Modern Language Association featuring a sophisicated custom member sign up form and bookstore
+            Website for the Modern Language Association featuring a sophisicated custom member sign up
+            form and bookstore. I worked with my team at Contextual Code to build this website. My
+            responsibilities were primarly the membership signup and other e-commerce related functions.
 
     -
         name: "Tallahassee Film Society Website"
@@ -74,7 +81,7 @@ projects:
             - "tfs1.jpg"
         address: "www.tallahasseefilms.com"
         desc: |
-            Website for the Tallahassee Film Society featuring a simple backend that allows the posting of showings and Shopify intergration.
+            Website for the Tallahassee Film Society featuring a simple backend that allows the posting of movie show times and Shopify intergration.
         
     -
         name: "FFLiveParse"
@@ -104,7 +111,10 @@ projects:
         address: "platform.cc"
         source: "gitlab.com/contextualcode/platform_cc"
         desc: |
-            Application writen in Go for provisioning apps with Docker based on [Platform.sh's](https://platform.sh/) .platform.app.yaml file.
+            Application writen in Go for provisioning apps with Docker based on Platform.sh's
+            .platform.app.yaml file. This has been superseded by a new tool called Pbrew
+            that removes the need for Docker and instead uses Homebrew to manage services.
+            This helps performance on M1 Macs.
 
     -
         name: "CProxy & CProxy-Cache"
@@ -167,8 +177,8 @@ projects:
         desc: |
             A simple endless runner where you avoid obstacles and collect coins. A simple
             game that is easy to code that I often rewrite to test new langauges and
-            engines. Screenshot 1 (above) shows a C++ version written for an [Arduino](https://www.arduino.cc/) 
-            while [screenshot 2](i/s/rc2.jpg) shows a Javascript/HTML5 version.
+            engines. There was also a version created on an [Arduino](https://www.arduino.cc/).
+            (See [screenshot](https://n.ogden.tech/i/s/rc2.jpg)).
 
     -
         name: "Dream Sphere"
@@ -198,6 +208,6 @@ projects:
         desc: |
             Over the years I've tried many times to create a cooperative side scroller
             dungeon crawler game. While I've never quite seen it through to completion
-            every attempt is always a very interesting and fun exercise. Over the years
-            I've rebuilt the same prototype probably at least half a dozen times in a
-            variety of languages and game engines, including engines I built myself.
+            every attempt is always a very interesting and fun exercise. I've rebuilt the
+            same prototype probably at least half a dozen times in a variety of languages
+            and game engines, including engines I built myself.
