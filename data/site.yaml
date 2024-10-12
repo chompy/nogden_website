@@ -1,10 +1,19 @@
 info:
     email: "nathan@ogden.tech"
     about: |
-        I'm a veteran software engineer with over a decade of experience, skilled
-        in PHP, Golang, and Python. I have a passion for writing code as cleanly
-        and efficiently as possible and I'm always looking for new and interesting
-        problems to solve through code!
+        I'm a veteran software engineer with almost two decades of professional experience. 
+        I have a passion for solving problems through code and am always excited to learn new skills. 
+
+        <details>
+        <summary>About This Site</summary>
+
+        Check out the source code and custom tool I used to compile this web site on Github! --
+        [https://github.com/chompy/nogden_website](https://github.com/chompy/nogden_website)
+
+        I put quite a bit of effort in to optimizing this site, It's under 400KB with images! It also has most of its content embededed in the HTML file (as data URIs) to reduce the number of HTTP requests.
+        
+        </details>
+        <br/>
 
 categories:
     -
@@ -82,7 +91,16 @@ projects:
         address: "www.tallahasseefilms.com"
         desc: |
             Website for the Tallahassee Film Society featuring a simple backend that allows the posting of movie show times and Shopify intergration.
-        
+
+    -
+        name: "AI Reporting Library"
+        category: app
+        built_with:
+            - python
+        source: "github.com/chompy/ai_reporter"
+        desc: |
+            Library to generate AI reports based on information collected from code bases (via Gitlab/Github) and a web browser controlled by the AI via Selenium. It uses a workflow system to determine which reports to run.
+
     -
         name: "FFLiveParse"
         category: app
@@ -102,19 +120,28 @@ projects:
             to push data to Javascript in browser.
 
     -
-        name: "Platform CC"
+        name: "PBrew"
+        category: app
+        built_with:
+            - golang
+        images:
+            - "pbrew1.png"
+        source: "github.com/chompy/pbrew"
+        desc: |
+            Dockerless alternative to Platform.CC. It was built due to the poor performance of Docker on M1 Macs.
+            It uses Homebrew to install services in an self contained directory and maps service ports to each environment.
+
+    -
+        name: "Platform.CC"
         category: app
         built_with:
             - golang
         images:
             - "pcc1.png"
-        address: "platform.cc"
-        source: "gitlab.com/contextualcode/platform_cc"
+        source: "github.com/chompy/platform_cc"
         desc: |
-            Application writen in Go for provisioning apps with Docker based on Platform.sh's
-            .platform.app.yaml file. This has been superseded by a new tool called Pbrew
-            that removes the need for Docker and instead uses Homebrew to manage services.
-            This helps performance on M1 Macs.
+            Application writen in Go for running web apps locally with Docker based on Platform.sh's
+            .platform.app.yaml file.
 
     -
         name: "CProxy & CProxy-Cache"
@@ -145,6 +172,8 @@ projects:
         category: app
         built_with:
             - cpp
+        images:
+            - "libchomp1.png"
         source: "github.com/chompy/libchomp"
         desc: |
             A C++ library and toolkit for 2D game development created mostly as a learning exercise. 
@@ -192,7 +221,7 @@ projects:
             A 2.5D dungeon crawler that was to feature a custom character creator, online
             multiplayer, and lots of equipable items. While this project was never completed 
             it's a interesting look in to my early years as a developer and game 
-            esigner. This was also built with [Panda 3D](https://www.panda3d.org/).        
+            designer. This was also built with [Panda 3D](https://www.panda3d.org/).        
 
     -
         name: "Chompy's Dungeon [Working Title]"
