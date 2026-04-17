@@ -10,10 +10,14 @@ import (
 	_ "image/jpeg"
 	"image/png"
 	_ "image/png"
-	"io/ioutil"
 	"os"
+	"path/filepath"
+	"slices"
+	"sort"
 	"strings"
 	"time"
+
+	_ "golang.org/x/image/webp"
 
 	"github.com/gomarkdown/markdown"
 	"github.com/nfnt/resize"
@@ -27,42 +31,67 @@ import (
 )
 
 const imgThumbWidth = 420
-const imgJpgQuality = 50
+const imgJpgQuality = 70
+
+var imageExts = []string{".jpg", ".jpeg", ".png", ".webp"}
 
 type Site struct {
 	Info struct {
-		Email string `yaml:"email"`
-		About string `yaml:"about"`
+		Email    string `yaml:"email"`
+		About    string `yaml:"about"`
+		Github   string `yaml:"github"`
+		LinkedIn string `yaml:"linked_in"`
 	} `yaml:"info"`
-	Categories []struct {
-		Key  string `yaml:"key"`
-		Name string `yaml:"name"`
-		Desc string `yaml:"desc"`
-	} `yaml:"categories"`
-	Projects []struct {
-		Name      string   `yaml:"name"`
-		Category  string   `yaml:"category"`
-		BuiltWith []string `yaml:"built_with"`
-		Address   string   `yaml:"address"`
-		Source    string   `yaml:"source"`
-		Desc      string   `yaml:"desc"`
-		Images    []string `yaml:"images"`
-	} `yaml:"projects"`
+	Events []struct {
+		Year        int    `yaml:"year"`
+		Type        string `yaml:"type"`
+		Name        string `yaml:"name"`
+		Description string `yaml:"desc"`
+		ImagesPath  string `yaml:"images_path"`
+		Images      []string
+	} `yaml:"events"`
 	CopyrightYear int
+	EventYears    []int
+}
+
+func getPathImages(path string) []string {
+	files, _ := os.ReadDir(path)
+	var images []string
+	for _, f := range files {
+		ext := filepath.Ext(f.Name())
+		if slices.Contains(imageExts, ext) {
+			images = append(images, filepath.Join(path, f.Name()))
+		}
+	}
+	return images
 }
 
 func main() {
 
 	// parse site.yaml
-	siteRaw, err := ioutil.ReadFile("data/site.yaml")
+	siteRaw, err := os.ReadFile("data/site.yaml")
 	if err != nil {
 		panic(err)
 	}
 	site := Site{
 		CopyrightYear: time.Now().Year(),
+		EventYears:    make([]int, 0),
 	}
 	if err := yaml.Unmarshal(siteRaw, &site); err != nil {
 		panic(err)
+	}
+
+	// compile additional information
+	sort.Slice(site.Events, func(i, j int) bool {
+		return site.Events[i].Year > site.Events[j].Year
+	})
+	for i, e := range site.Events {
+		if e.Year > 0 && !slices.Contains(site.EventYears, e.Year) {
+			site.EventYears = append(site.EventYears, e.Year)
+		}
+		if e.ImagesPath != "" {
+			site.Events[i].Images = getPathImages(e.ImagesPath)
+		}
 	}
 
 	// load template + generate html
@@ -105,8 +134,8 @@ func main() {
 			if img.Bounds().Size().X > imgThumbWidth {
 				img = resize.Resize(imgThumbWidth, 0, img, resize.Lanczos3)
 				img, err = cutter.Crop(img, cutter.Config{
-					Width:   16,
-					Height:  9,
+					Width:   4,
+					Height:  3,
 					Mode:    cutter.Centered,
 					Options: cutter.Ratio,
 				})

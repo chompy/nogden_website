@@ -1,96 +1,117 @@
 info:
     email: "nathan@ogden.tech"
+    github: "https://github.com/chompy"
+    linked_in: "https://www.linkedin.com/in/nathan-ogden-75a2465b"
     about: |
-        I'm a veteran software engineer with almost two decades of professional experience. 
+        I'm a veteran software engineer with two decades of professional experience. 
         I have a passion for solving problems through code and am always excited to learn new skills. 
 
-        <details>
-        <summary>About This Site</summary>
 
-        Check out the source code and custom tool I used to compile this web site on Github! --
-        [https://github.com/chompy/nogden_website](https://github.com/chompy/nogden_website)
-
-        I put quite a bit of effort in to optimizing this site, It's under 400KB with images! It also has most of its content embededed in the HTML file (as data URIs) to reduce the number of HTTP requests.
-        
-        </details>
-        <br/>
-
-categories:
+events:
     -
-        key: client
-        name: "Client Websites"
+        year: 2007
+        name: "Tallahassee Film Society Website"
+        type: "project"
+        images_path: "i/s/tfs"
         desc: |
-            Sites built for clients that I was directly involved with.
+            I launched my software development career by volunteering with the Tallahassee Film Society, 
+            helping them rebuild and host their website. Now, 20 years later, I'm still proudly maintaining it.
+
+            The site has evolved several times over the years: it began as a custom PHP build, later migrated to WordPress,
+            and now runs on Django. Through each iteration, the core requirement has remained the same: a simple
+            backend where staff can easily add new showings. The site also features a Shopify integration
+            for seamless ticket sales.
+
+            https://www.tallahasseefilms.com
+
+    -
+        year: 2013
+        name: "Joined Contextual Code"
+        type: "event"
     
-    -
-        key: app
-        name: "Applications & Tools"
-        desc: |
-            Applications and tools created by me, both as internal company projects and personal side projects.
 
     -
-        key: game
-        name: "Games"
+        year: 2014
+        name: "Modern Language Association"
+        images_path: "i/s/mla"
         desc: |
-            Game projects that I have worked on. 
+            This was my first major project at Contextual Code. I collaborated closely with both my
+            colleagues at Contextual Code and directly with the Modern Language Association (MLA) to build and maintain their website.
 
-projects:
+            The site was powered by the Ibexa CMS (formerly eZPublish) and featured a sophisticated member
+            signup flow, plus a full-fledged bookstore that blended Shopify integrations with custom e-commerce
+            solutions. Additionally, we worked with the MLA's own developers who built a custom API that allowed
+            us to fetch and display data from the MLA's internal database.
+
+            https://www.mla.org
+
     -
+        year: 2020
         name: "OncoLife Survivorship Care Plan"
-        category: client
-        built_with:
-            - php
-            - symfony
-            - javascript
-        images:
-            - "oncolife1.jpg"
-        address: "oncolife.oncolink.org"
+        images_path: "i/s/onco"
         desc: |
+            TODO
             Web application that helps cancer patients determine their best treatment options.
             I worked with another developer on this to build a questionaire powered by a complex logic engine.
 
+            https://oncolife.oncolink.org
+
+    -
+        year: 2021
+        name: "Platform.CC & PBrew"
+        desc: |
+            TODO
+            Dockerless alternative to Platform.CC. It was built due to the poor performance of Docker on M1 Macs.
+            It uses Homebrew to install services in an self contained directory and maps service ports to each environment.
+
+            https://github.com/chompy/platform_cc
+            https://github.com/chompy/pbrew
+
+
+    -
+        year: 2022
+        name: "Joined JazzHR / Employ Inc."
+
+    -
+        year: 2023
+        name: "JazzHR - Text2Apply"
+        desc: |
+            TODO
+
+
+    -
+        year: 2024
+        name: "Joined Duarte"
+
+    -
+        year: 2025
+        name: ""
+        desc: |
+            TODO
+
     -
         name: "Florida Courts - Virtual Courts"
-        category: client
-        built_with:
-            - php
-            - symfony
-            - javascript
-            - react
-        images:
-            - "vc1.jpg"
-        address: "vc.flcourts.org"
+        url: "vc.flcourts.org"
         desc: |
             Web application that provides a series of Family Court training programs. Working 
             with other team members at Contextual Code I implemented the core logic that powered 
             the various courses. It was built using a system inspired by the logic engine that powers
             the OncoLife Survivorship Care Plan.
 
-    -
-        name: "Modern Language Association"
-        category: client
-        built_with:
-            - php
-            - symfony
-        images:
-            - "mla1.jpg"
-        address: "www.mla.org"
-        desc: |
-            Website for the Modern Language Association featuring a sophisicated custom member sign up
-            form and bookstore. I worked with my team at Contextual Code to build this website. My
-            responsibilities were primarly the membership signup and other e-commerce related functions.
 
     -
-        name: "Tallahassee Film Society Website"
-        category: client
-        built_with:
-            - python
-            - django
-        images:
-            - "tfs1.jpg"
-        address: "www.tallahasseefilms.com"
+        year: 2019
+        name: "FFLiveParse"
+        source: "github.com/chompy/ffliveparse_server"
         desc: |
-            Website for the Tallahassee Film Society featuring a simple backend that allows the posting of movie show times and Shopify intergration.
+            TODO
+            Web application for viewing game play statistics for the popular online video game, 
+            Final Fantasy XIV. It extends another popular
+            tool with a C# extension which pushes data to a Golang server which uses websockets
+            to push data to Javascript in browser.
+
+            https://github.com/chompy/ffliveparse_server
+            https://github.com/chompy/ffliveparse_act_plugin
 
     -
         name: "AI Reporting Library"
@@ -101,55 +122,12 @@ projects:
         desc: |
             Library to generate AI reports based on information collected from code bases (via Gitlab/Github) and a web browser controlled by the AI via Selenium. It uses a workflow system to determine which reports to run.
 
-    -
-        name: "FFLiveParse"
-        category: app
-        built_with:
-            - golang
-            - javascript
-            - csharp
-        images:
-            - "ffliveparse2.png"
-            - "ffliveparse1.png"
-        address: "www.ffliveparse.com"
-        source: "github.com/chompy/ffliveparse_server"
-        desc: |
-            Web application for viewing game play statistics for the popular online video game, 
-            [Final Fantasy XIV](https://www.finalfantasyxiv.com/). It extends another popular
-            tool with a C# extension which pushes data to a Golang server which uses websockets
-            to push data to Javascript in browser.
-
-    -
-        name: "PBrew"
-        category: app
-        built_with:
-            - golang
-        images:
-            - "pbrew1.png"
-        source: "github.com/chompy/pbrew"
-        desc: |
-            Dockerless alternative to Platform.CC. It was built due to the poor performance of Docker on M1 Macs.
-            It uses Homebrew to install services in an self contained directory and maps service ports to each environment.
-
-    -
-        name: "Platform.CC"
-        category: app
-        built_with:
-            - golang
-        images:
-            - "pcc1.png"
-        source: "github.com/chompy/platform_cc"
-        desc: |
-            Application writen in Go for running web apps locally with Docker based on Platform.sh's
-            .platform.app.yaml file.
 
     -
         name: "CProxy & CProxy-Cache"
         category: app
         built_with:
             - golang
-        images:
-            - "cproxy1.png"
         source: "github.com/chompy/cproxy-cache"
         desc: |
             HTTP/FastCGI proxy with a cache extension written in Go. The cache is meant
@@ -160,8 +138,6 @@ projects:
         category: app
         built_with:
             - cpp
-        images:
-            - "fc1.jpg"
         source: "github.com/chompy/arduino_family_calendar"
         desc: |
             A family calendar Arduino project. It displayed upcoming family events and photos
@@ -172,8 +148,6 @@ projects:
         category: app
         built_with:
             - cpp
-        images:
-            - "libchomp1.png"
         source: "github.com/chompy/libchomp"
         desc: |
             A C++ library and toolkit for 2D game development created mostly as a learning exercise. 
@@ -183,11 +157,6 @@ projects:
         category: game
         built_with:
             - python
-        images:
-            - "bnb1.jpg"
-            - "bnb2.jpg"
-            - "bnb3.jpg"
-            - "bnb4.jpg"
         source: "github.com/chompy/bumpnbrawl"
         desc: |
             A simple top down fighting game with fun and colorful characters. 
@@ -199,9 +168,6 @@ projects:
         built_with:
             - javascript
             - cpp
-        images:
-            - "rc1.png"
-            - "rc2.jpg"
         address: "s3.amazonaws.com/run.chompy.me/index.html"
         desc: |
             A simple endless runner where you avoid obstacles and collect coins. A simple
@@ -214,9 +180,6 @@ projects:
         category: game
         built_with:
             - python
-        images:
-            - "ds1.jpg"
-            - "ds2.jpg"
         desc: |
             A 2.5D dungeon crawler that was to feature a custom character creator, online
             multiplayer, and lots of equipable items. While this project was never completed 
@@ -230,10 +193,6 @@ projects:
             - python
             - golang
             - cpp
-        images:
-            - "cd1.png"
-            - "cd2.png"
-            - "cd3.png"
         desc: |
             Over the years I've tried many times to create a cooperative side scroller
             dungeon crawler game. While I've never quite seen it through to completion
