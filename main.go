@@ -52,6 +52,10 @@ type Site struct {
 	} `yaml:"events"`
 	CopyrightYear int
 	EventYears    []int
+	SideProjects  []struct {
+		Name        string `yaml:"name"`
+		Description string `yaml:"desc"`
+	} `yaml:"side_projects"`
 }
 
 func getPathImages(path string) []string {

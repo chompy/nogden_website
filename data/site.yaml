@@ -3,14 +3,16 @@ info:
     github: "https://github.com/chompy"
     linked_in: "https://www.linkedin.com/in/nathan-ogden-75a2465b"
     about: |
-        I'm a veteran software engineer with two decades of professional experience. 
-        I have a passion for solving problems through code and am always excited to learn new skills. 
-
+        I'm a veteran software engineer with two decades of professional experience. I approach each
+        project with a commitment to delivering clean, maintainable code by combining deep technical
+        expertise with a passion for solving complex problems. I am actively embracing AI and agentic coding workflows,
+        leveraging these tools to accelerate development while applying my extensive experience to ensure quality,
+        reliability, and sound architectural decisions.
 
 events:
     -
         year: 2007
-        name: "Tallahassee Film Society Website"
+        name: "Tallahassee Film Society"
         type: "project"
         images_path: "i/s/tfs"
         desc: |
@@ -50,9 +52,14 @@ events:
         name: "OncoLife Survivorship Care Plan"
         images_path: "i/s/onco"
         desc: |
-            TODO
-            Web application that helps cancer patients determine their best treatment options.
-            I worked with another developer on this to build a questionaire powered by a complex logic engine.
+            A web application that helps cancer patients identify optimal treatment options.
+            I collaborated with a fellow developer and a team from the University of Pennsylvania to build a questionnaire driven by a sophisticated logic engine.
+            This project involved rebuilding their existing ColdFusion system using PHP with the Symfony framework and the Ibexa CMS.
+            We leveraged the CMS to define the nodes within the logic engine, which typically represented questions and answers for patients or their care providers.
+            Each node included conditional logic to dynamically determine which subsequent questions and answers to display. Patient responses were then used to 
+            generate a comprehensive report, also constructed using the same logic tree system.
+            Later, we expanded the application to interface with FHIR APIs and developed a containerized version for distribution to third-party partners.
+            Through rigorous automated testing, we successfully launched the application with no significant bugs or issues.
 
             https://oncolife.oncolink.org
 
@@ -60,97 +67,132 @@ events:
         year: 2021
         name: "Platform.CC & PBrew"
         desc: |
-            TODO
-            Dockerless alternative to Platform.CC. It was built due to the poor performance of Docker on M1 Macs.
-            It uses Homebrew to install services in an self contained directory and maps service ports to each environment.
+
+            While at Contextual Code, we migrated all our web applications to Platform.sh, a managed hosting provider that
+            automatically builds the hosting environment from a configuration file.
+            For developers at Contextual Code, spinning up a local development environment was always a challenge, and there was always uncertainty whether changes that worked
+            locally would function correctly in production.
+            I realized that the Platform.sh configuration file provided detailed information about the hosting environment, making it possible to build a tool that could
+            recreate that environment locally using Docker.
+            Over the course of a weekend, I built a working prototype. It was well received by my colleagues, and I was given
+            the greenlight to continue development. It eventually became a crucial tool for all developers at Contextual Code.
+            It was named Platform.cc, with CC standing for Contextual Code, a play on the service it was based on.
+            
+            Around this time, many developers at Contextual Code switched to M1 Macs. Docker had poor performance on these machines, so I decided to build a
+            new tool that could operate without containerization. This tool, named PBrew, used Homebrew to manage dependencies and made it possible to install multiple versions
+            of all the software needed for a local development environment. It mapped all services to custom ports to ensure multiple versions of the
+            same software could run simultaneously. While this approach sacrificed parity with the Platform.sh production environment,
+            it was very fast and made local development significantly more efficient.
 
             https://github.com/chompy/platform_cc
             https://github.com/chompy/pbrew
 
-
     -
         year: 2022
         name: "Joined JazzHR / Employ Inc."
+        type: "event"
 
     -
         year: 2023
-        name: "JazzHR - Text2Apply"
+        name: "JazzHR: Text2Apply"
         desc: |
-            TODO
+            At JazzHR (Employ Inc.), I collaborated with a team to develop a new feature called Text2Apply. JazzHR is an applicant tracking system 
+            that provides tools for companies seeking to hire new employees. Text2Apply enabled candidates to apply for jobs via SMS. My primary
+            responsibility was implementing a REST API client to interface with the SMS service, an internal service maintained by another team at
+            Employ. I followed the documentation and regularly consulted with the SMS service team to complete this task.
+            Additionally, I was tasked with ensuring 10DLC compliance and contributed to the development of related front-end React components.
+            I worked with my team to design the overall API and database schema for the feature, as well as to build automated tests and a test database.
 
 
     -
         year: 2024
         name: "Joined Duarte"
+        type: "event"
 
     -
         year: 2025
-        name: ""
+        name: "Duarte AI"
         desc: |
-            TODO
+            I joined Duarte to help build and maintain Duarte AI, an AI-powered web application that assists users in creating persuasive presentations.
+
+            The application was built as a Next.js app hosted on Vercel, with two supporting microservices hosted on AWS ECS.
+
+            One microservice, the exporter (written in Python), converted LLM-generated slides into PPTX presentations. When I joined, 
+            this service was broken and only partially implemented. I refactored and completed it, which required in-depth research
+            into the structure of PPTX files and how to programmatically create and manipulate them.
+
+            The other microservice, the converter, transformed PPTX and PDF files into images. It used LibreOffice to convert PPTX to PDF
+            and ImageMagick to render PDFs as slide images. We encountered an issue where fonts in the slide images did not match the
+            originals, causing text overlap. After extensive research, I implemented two solutions: updating LibreOffice to a beta version
+            to resolve an embedded font issue, and creating a font substitution map to replace common fonts with equivalent free alternatives.
+
+            My most impactful contribution was refactoring the application to enforce LLM output adherence to JSON schemas. Previously, 
+            the LLM produced Markdown, and the application attempted to parse the required information from it, which was error-prone and unreliable.
+
+
+side_projects:
+   
+    - 
+        name: "Discord Soundboard"
+        desc: |
+            Discord soundboard bot with a web interface for playing and managing sounds.
+
+            https://github.com/chompy/discord_soundboard
 
     -
-        name: "Florida Courts - Virtual Courts"
-        url: "vc.flcourts.org"
+        name: "NDisplay"
         desc: |
-            Web application that provides a series of Family Court training programs. Working 
-            with other team members at Contextual Code I implemented the core logic that powered 
-            the various courses. It was built using a system inspired by the logic engine that powers
-            the OncoLife Survivorship Care Plan.
+            Application for displaying text on a screen that can be updated via the web. Used to display recipes.
 
+            https://github.com/chompy/ndisplay
 
     -
-        year: 2019
+        name: "FF14 Strategy Board Viewer"
+        desc: |
+            Go library for parsing and rendering strategy boards from Final Fantasy XIV. (Example: https://go14.lol/b/4)
+
+            https://github.com/chompy/ffxiv_strat_board_viewer
+
+    -
         name: "FFLiveParse"
-        source: "github.com/chompy/ffliveparse_server"
         desc: |
-            TODO
             Web application for viewing game play statistics for the popular online video game, 
-            Final Fantasy XIV. It extends another popular
-            tool with a C# extension which pushes data to a Golang server which uses websockets
-            to push data to Javascript in browser.
+            Final Fantasy XIV.
 
             https://github.com/chompy/ffliveparse_server
             https://github.com/chompy/ffliveparse_act_plugin
 
     -
         name: "AI Reporting Library"
-        category: app
-        built_with:
-            - python
         source: "github.com/chompy/ai_reporter"
         desc: |
-            Library to generate AI reports based on information collected from code bases (via Gitlab/Github) and a web browser controlled by the AI via Selenium. It uses a workflow system to determine which reports to run.
+            An early attempt to build a library that utilized AI to generate reports based on information collected from codebases and a
+            web browser controlled by the AI via Selenium. It employed a workflow system to determine which reports to run.
 
+            https://github.com/chompy/ai_reporter
 
     -
         name: "CProxy & CProxy-Cache"
-        category: app
-        built_with:
-            - golang
-        source: "github.com/chompy/cproxy-cache"
         desc: |
-            HTTP/FastCGI proxy with a cache extension written in Go. The cache is meant
-            as a very simple and lightweight substitute to Varnish and supports edge side includes (ESI).
+            My attempt to build a HTTP/FastCGI proxy with a cache extension written in Go. The cache was meant
+            as a very simple and lightweight substitute to Varnish and supported edge side includes (ESI).
+
+            https://github.com/chompy/cproxy-cache
 
     -
         name: "Arduino Family Calendar"
-        category: app
-        built_with:
-            - cpp
-        source: "github.com/chompy/arduino_family_calendar"
         desc: |
-            A family calendar Arduino project. It displayed upcoming family events and photos
-            from a micro SD card. It used an Arduino, a TTF shield, and a 3D printed case. They were given away as gifts.
+            A family calendar Arduino project that displayed upcoming family events and photos
+            from a micro SD card. It utilized an Arduino, a TTF shield, and a 3D printed case. These were given to family members as gifts.
+
+            https://github.com/chompy/arduino_family_calendar
 
     -
         name: "Libchomp"
-        category: app
-        built_with:
-            - cpp
-        source: "github.com/chompy/libchomp"
         desc: |
-            A C++ library and toolkit for 2D game development created mostly as a learning exercise. 
+            A C++ library and toolkit for 2D game development created mostly as a learning exercise.
+
+            https://github.com/chompy/libchomp
 
     -
         name: "Bump N Brawl"
@@ -159,43 +201,6 @@ events:
             - python
         source: "github.com/chompy/bumpnbrawl"
         desc: |
-            A simple top down fighting game with fun and colorful characters. 
-            Built with [Panda 3D](https://www.panda3d.org/), a free and open source game engine.
+            A top-down fighting game featuring vibrant, stylized characters, built with [Panda3D](https://www.panda3d.org/), a free and open-source game engine.
 
-    -
-        name: "Run Chomp"
-        category: game
-        built_with:
-            - javascript
-            - cpp
-        address: "s3.amazonaws.com/run.chompy.me/index.html"
-        desc: |
-            A simple endless runner where you avoid obstacles and collect coins. A simple
-            game that is easy to code that I often rewrite to test new langauges and
-            engines. There was also a version created on an [Arduino](https://www.arduino.cc/).
-            (See [screenshot](https://n.ogden.tech/i/s/rc2.jpg)).
-
-    -
-        name: "Dream Sphere"
-        category: game
-        built_with:
-            - python
-        desc: |
-            A 2.5D dungeon crawler that was to feature a custom character creator, online
-            multiplayer, and lots of equipable items. While this project was never completed 
-            it's a interesting look in to my early years as a developer and game 
-            designer. This was also built with [Panda 3D](https://www.panda3d.org/).        
-
-    -
-        name: "Chompy's Dungeon [Working Title]"
-        category: game
-        built_with:
-            - python
-            - golang
-            - cpp
-        desc: |
-            Over the years I've tried many times to create a cooperative side scroller
-            dungeon crawler game. While I've never quite seen it through to completion
-            every attempt is always a very interesting and fun exercise. I've rebuilt the
-            same prototype probably at least half a dozen times in a variety of languages
-            and game engines, including engines I built myself.
+            https://github.com/chompy/bumpnbrawl
