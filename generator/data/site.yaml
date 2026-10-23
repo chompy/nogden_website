@@ -31,7 +31,6 @@ events:
         name: "Joined Contextual Code"
         type: "event"
     
-
     -
         year: 2014
         name: "Modern Language Association"

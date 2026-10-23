@@ -1,2 +1,2 @@
-*.html
 *.code-workspace
+/_generator/*.html

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Nathan Ogden · Software Engineer</title>
+  <!-- Google Fonts + simple CSS reset -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f5f7fb;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+      color: #1a1f2e;
+      line-height: 1.4;
+      padding: 2rem 1.5rem;
+    }
+
+    .resume-container {
+      max-width: 980px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 32px;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.02);
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+
+    .resume-inner {
+      padding: 2.5rem 2.2rem 3.2rem 2.2rem;
+    }
+
+
+    .hero {
+      margin-bottom: 2.8rem;
+      border-bottom: 2px solid #eef2f8;
+      padding-bottom: 1.8rem;
+    }
+
+    .name {
+      font-size: 3.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #1E2B3C 0%, #2C3E50 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 0.3rem;
+      line-height: 1.2;
+    }
+
+    .role {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #527a9b;
+      letter-spacing: -0.2px;
+      border-left: 3px solid #8aaec0;
+      padding-left: 0.85rem;
+      margin-top: 0.3rem;
+    }
+
+    /* timeline style – each year block */
+    .timeline-year {
+      margin-bottom: 2.6rem;
+    }
+
+    .year-heading {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: #1e2f3c;
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.01em;
+      display: inline-block;
+      background: #eef3fc;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      line-height: 1.3;
+    }
+
+    /* entry card — contains image placeholder + text content side by side */
+    .entry {
+      background: #fefefe;
+      border-radius: 24px;
+      padding: 1.4rem 1.8rem;
+      margin-bottom: 1.6rem;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03), 0 6px 12px -8px rgba(0, 0, 0, 0.05);
+      transition: all 0.2s;
+      border: 1px solid #edf2f7;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .entry:hover {
+      border-color: #dce5ef;
+      box-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.08);
+    }
+
+    /* IMAGE PLACEHOLDER — black box style as in mockup */
+    .entry-image {
+      flex-shrink: 0;
+      width: 110px;
+      height: 110px;
+      background: #1a1e2c;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+    }
+
+    /* inner representation of a placeholder (icon / subtle pattern) */
+    .image-placeholder-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #a0a9bc;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      background: #2a2f3f;
+      width: 100%;
+      height: 100%;
+      border-radius: 18px;
+      transition: 0.1s;
+    }
+
+    /* optional small icon (camera / image) */
+    .image-placeholder-content svg {
+      margin-bottom: 6px;
+      opacity: 0.7;
+    }
+
+    /* when actual image is inserted, img tag will fill container */
+    .entry-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 18px;
+      display: block;
+    }
+
+    /* right side content (title + body) */
+    .entry-content {
+      flex: 1;
+      min-width: 180px;
+    }
+
+    .entry-title {
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: #1f3b4c;
+      margin-bottom: 0.9rem;
+      letter-spacing: -0.2px;
+      border-left: 4px solid #7fa1bd;
+      padding-left: 0.9rem;
+    }
+
+    .entry-body {
+      color: #2c4258;
+      font-size: 1rem;
+      line-height: 1.5;
+      font-weight: 400;
+    }
+
+    .entry-body p {
+      margin-bottom: 0.65rem;
+    }
+
+    .entry-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* subtle separation for multiple copy lines */
+    .body-copy-line {
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+
+    /* extra spacing if many paragraphs */
+    .spacer {
+      margin-top: 0.25rem;
+    }
+
+    /* mockup text style for fidelity */
+    .mockup-text {
+      color: #3c5a74;
+    }
+
+    /* footer note */
+    .footer-note {
+      margin-top: 2.8rem;
+      padding-top: 1rem;
+      font-size: 0.75rem;
+      text-align: center;
+      color: #8aa0b0;
+      border-top: 1px solid #eef2f8;
+      letter-spacing: 0.2px;
+    }
+
+    /* responsive for narrow devices — stack image above text */
+    @media (max-width: 640px) {
+      body {
+        padding: 1rem;
+      }
+      .resume-inner {
+        padding: 1.8rem 1.3rem 2.2rem 1.3rem;
+      }
+      .name {
+        font-size: 2.4rem;
+      }
+      .year-heading {
+        font-size: 1.6rem;
+        padding: 0.15rem 0.9rem;
+      }
+      .entry-title {
+        font-size: 1.25rem;
+      }
+      .entry {
+        padding: 1.2rem;
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .entry-image {
+        width: 100%;
+        height: 160px;
+        max-width: 280px;
+        margin-bottom: 0.2rem;
+      }
+      .entry-image img, .image-placeholder-content {
+        border-radius: 16px;
+      }
+    }
+
+    /* print version */
+    @media print {
+      body {
+        background: white;
+        padding: 0.2in;
+      }
+      .resume-container {
+        box-shadow: none;
+        border: 1px solid #ddd;
+      }
+      .entry {
+        break-inside: avoid;
+      }
+      .entry-image {
+        background: #eaeef2;
+        border: 1px solid #ccc;
+      }
+      .image-placeholder-content {
+        background: #eaeef2;
+        color: #6c7a8e;
+      }
+    }
+
+    /* additional fine-tuning for inline SVG */
+    .mock-icon {
+      width: 32px;
+      height: 32px;
+      stroke-width: 1.5;
+    }
+  </style>
+</head>
+<body>
+<div class="resume-container">
+  <div class="resume-inner">
+    <!-- Header: Nathan Ogden + software engineer -->
+    <div class="hero">
+      <h1 class="name">Nathan Ogden</h1>
+      <div class="role">software engineer</div>
+    </div>
+
+    <!-- 2026 Section -->
+    <div class="timeline-year">
+      <div class="year-heading">2026</div>
+      
+      <!-- Entry 1 (2026): black box placeholder image + title & body copy -->
+      <div class="entry">
+        <div class="entry-image">
+          <div class="image-placeholder-content">
+            <svg class="mock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="2.5" ry="2.5"></rect>
+              <circle cx="8.5" cy="8.5" r="2.5"></circle>
+              <polyline points="21 15 16 10 5 21"></polyline>
+              <line x1="3" y1="20" x2="10" y2="13"></line>
+            </svg>
+            <span>image</span>
+          </div>
+        </div>
+        <div class="entry-content">
+          <div class="entry-title">title</div>
+          <div class="entry-body">
+            <span class="body-copy-line">body copy here body copy here</span>
+            <span class="body-copy-line">body copy here body copy here</span>
+            <span class="body-copy-line">body copy here body copy here</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Entry 2 (2026): second timeline card with its own placeholder image -->
+      <div class="entry">
+        <div class="entry-image">
+          <div class="image-placeholder-content">
+            <svg class="mock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M4 16l4-4 4 4 4-4 4 4" />
+              <rect x="2" y="4" width="20" height="16" rx="2" ry="2" />
+              <line x1="8" y1="10" x2="8" y2="10.01" />
+            </svg>
+            <span>image</span>
+          </div>
+        </div>
+        <div class="entry-content">
+          <div class="entry-title">lead systems architect</div>
+          <div class="entry-body">
+            <p>body copy here body copy here — designing resilient cloud infrastructure and microservices orchestration.</p>
+            <p>body copy here body copy here focused on performance optimization and developer experience.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2024 Section -->
+    <div class="timeline-year">
+      <div class="year-heading">2024</div>
+      
+      <!-- Entry 1 (2024): matches mockup exactly (title + body copy lines + placeholder image) -->
+      <div class="entry">
+        <div class="entry-image">
+          <div class="image-placeholder-content">
+            <svg class="mock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+              <circle cx="8.5" cy="8.5" r="2.5" />
+              <path d="M21 15L16 10L5 21" />
+            </svg>
+            <span>image</span>
+          </div>
+        </div>
+        <div class="entry-content">
+          <div class="entry-title">title</div>
+          <div class="entry-body">
+            <span class="body-copy-line">body copy here body copy here</span>
+            <span class="body-copy-line">body copy here body copy here</span>
+            <span class="body-copy-line mockup-text">body copy her e body copy here</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Entry 2 (2024): platform engineer with its own image placeholder -->
+      <div class="entry">
+        <div class="entry-image">
+          <div class="image-placeholder-content">
+            <svg class="mock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+            <span>image</span>
+          </div>
+        </div>
+        <div class="entry-content">
+          <div class="entry-title">platform engineer · core infrastructure</div>
+          <div class="entry-body">
+            <p>body copy here body copy here — built internal tooling and automation pipelines for deployment.</p>
+            <p>body copy here body copy here with emphasis on reliability, metrics and incident response.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional demo note: each entry includes an image placeholder (black box style) 
+         You can replace .image-placeholder-content with an <img> tag to drop in real images. -->
+    <div class="footer-note">
+      <span>✦ each entry includes image placeholder — replace with &lt;img&gt; to add real visuals ✦</span>
+    </div>
+  </div>
+</div>
+
+<!-- small script to illustrate easy image replacement (optional, just demonstration) 
+     but keeping no intrusive JS; pure template approach. 
+     Users can simply replace inner .image-placeholder-content with <img src="..."> -->
+</body>
+</html>
