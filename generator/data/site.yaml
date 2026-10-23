@@ -128,6 +128,23 @@ events:
             My most impactful contribution was refactoring the application to enforce LLM output adherence to JSON schemas. Previously, 
             the LLM produced Markdown, and the application attempted to parse the required information from it, which was error-prone and unreliable.
 
+    -
+        year: 2026
+        name: "Built Local LLM Server"
+        desc: |
+            I've never been crazy at the prospect of sharing personal information with a 3rd party LLM provider. I also love to DIY, so the propsect of being able
+            to run my own private local LLM, and have an coding agent running locally was very intriguing to me. In 2026 with the release of models like Qwen 3.6 27B
+            (and now Qwen 3.8 27B) running a local coding agent became viable.
+            
+            I decided to build a server for hosting a local LLM. I started with an old gaming desktop PC I had lying around and bought a used Nvidia Tesla P40 on
+            Ebay. After lots of research, tinkering with software, and tuning configuration files I had a modest setup. It was slow but other than the cost of electricity
+            it was free to run as much as I wanted. I could give it tasks to perform and let it run through the night.
+
+            I have been using this setup to build all my personally projects and have been doing some part-time work with it as well.
+
+            I created a Git repository with the model configuration and scripts I use:
+            https://github.com/chompy/local_llm_tesla_p40
+
 
 side_projects:
    
